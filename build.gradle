@@ -1,6 +1,15 @@
-plugins {
-    id 'com.android.application'
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // Esta linha é o que faltava para o robô achar o Plugin
+        classpath 'com.android.tools.build:gradle:8.1.0'
+    }
 }
+
+apply plugin: 'com.android.application'
 
 android {
     namespace 'com.mouse.fixer'
@@ -13,10 +22,9 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    
-    // Isso aqui ignora erros bobos de imagem que travam o build
-    lintOptions {
-        checkReleaseBuilds false
-        abortOnError false
-    }
+}
+
+repositories {
+    google()
+    mavenCentral()
 }
