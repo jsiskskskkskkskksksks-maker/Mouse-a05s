@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.mouse.fixer'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.mouse.fixer"
+        minSdk 26
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+}
