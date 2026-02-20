@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# Baixa o Gradle de forma oficial e segura
-mkdir -p gradle/wrapper
-printf "distributionUrl=https\://services.gradle.org/distributions/gradle-8.0-bin.zip\nwrapperVersion=8.0" > gradle/wrapper/gradle-wrapper.properties
-
-# Usa o próprio Gradle para se auto-instalar e compilar
-curl -sL https://raw.githubusercontent.com/gradle/gradle/master/gradlew -o gradlew
+# Baixa o lançador oficial do Gradle
+curl -sL https://raw.githubusercontent.com/gradle/gradle/v8.0.0/gradlew -o gradlew
 chmod +x gradlew
+
+# Cria o arquivo de configuração de versão automaticamente
+mkdir -p gradle/wrapper
+echo "distributionUrl=https\://services.gradle.org/distributions/gradle-8.0-bin.zip" > gradle/wrapper/gradle-wrapper.properties
+
+# Inicia a compilação
 ./gradlew assembleDebug
