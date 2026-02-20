@@ -28,3 +28,5 @@ repositories {
     google()
     mavenCentral()
 }
+// Deixe este arquivo COMPLETAMENTE VAZIO ou apenas com este comentário
+// As configurações principais agora ficam no settings e no app/build.gradle
